@@ -48,7 +48,7 @@ function computerResponse(event) {
         default:
             computerOut.innerHTML += "... wait that is not a valid input"
     }
-    scoreTag.innerHTML = "Score:" + score
+    scoreTag.innerHTML = "score:" + score
 }
 
 // Simply adding the event listener
