@@ -23,7 +23,7 @@ function computerResponse(event) {
     const playerMove = rockPaperScissorsTable[document.querySelector("input").value.toLowerCase()]
     const computerMove = calculateMove()
 
-    computerOut.innerHTML = "my move is: " + translateMove(computerMove).toUpperCase()
+    computerOut.innerHTML = "my move is: " + translateMove(computerMove)
 
     switch (computerMove - playerMove) {
         case 0:
