@@ -23,30 +23,30 @@ function computerResponse(event) {
     const playerMove = rockPaperScissorsTable[document.querySelector("input").value.toLowerCase()]
     const computerMove = calculateMove()
 
-    computerOut.innerHTML = "MY MOVE IS: " + translateMove(computerMove).toUpperCase()
+    computerOut.innerHTML = "my move is: " + translateMove(computerMove).toUpperCase()
 
     switch (computerMove - playerMove) {
         case 0:
-            computerOut.innerHTML += "... D.R.A.W"
+            computerOut.innerHTML += "... draw"
             break
         case 1:
-            computerOut.innerHTML += "... I WIN, I ALWAYS WIN"
+            computerOut.innerHTML += "... I win"
             score -= 1
             break
         case 2 :
-            computerOut.innerHTML += "... YOU WIN... HOW?"
+            computerOut.innerHTML += "... you win"
             score += 1
             break
         case -1:
-            computerOut.innerHTML += "... YOU WIN... HOW?"
+            computerOut.innerHTML += "... you win"
             score += 1
             break
         case -2:
-            computerOut.innerHTML += "... I WIN, I ALWAYS WIN"
+            computerOut.innerHTML += "... I win"
             score -= 1
             break
         default:
-            computerOut.innerHTML += "... WAIT THAT IS NOT A VALID INPUT"
+            computerOut.innerHTML += "... wait that is not a valid input"
     }
     scoreTag.innerHTML = "Score:" + score
 }
