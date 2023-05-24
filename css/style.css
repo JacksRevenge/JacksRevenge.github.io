@@ -1,15 +1,18 @@
 body {
-   background: gray;
-   display: block;
+    display: flex;
+    background: gray;
+    align-items: center;
+    flex-direction: column;
 }
 
 #terminal-box {
     display: inline-block;
     background: black;
-    color: white;
+    color: whitesmoke;
     width: 50vw;
     height: 50vh;
     padding: 5px;
+    border: 2px whitesmoke solid;
 }
 
 form {
