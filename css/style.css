@@ -1,0 +1,17 @@
+body {
+   background: gray;
+   display: block;
+}
+
+#terminal-box {
+    display: inline-block;
+    background: black;
+    color: white;
+    width: 50vw;
+    height: 50vh;
+    padding: 5px;
+}
+
+form {
+    align-content: center;
+}
