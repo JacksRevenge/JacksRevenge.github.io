@@ -22,6 +22,9 @@ class Game {
             case 1:
                 this.outsideLevel(action)
                 break
+            case 2:
+                this.insideLevel(action)
+                break
         }
     }
 
@@ -39,6 +42,10 @@ class Game {
         } else {
             console.log("wut")
         }
+    }
+
+    insideLevel(action) {
+        console.log(action)
     }
 }
 
