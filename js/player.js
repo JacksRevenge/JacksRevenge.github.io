@@ -1,32 +1,32 @@
 export default class Player {
     constructor() {
-        this._hp = 50
-        this._maxhp = this._hp
-        this._armor = "Chain Vest"
-        this._weapon = "Dagger"
-        this._flasks = 5
+        this.currentHp = 50
+        this.maxHp = this.currentHp
+        this.currentArmor = "Chain Vest"
+        this.currentWeapon = "Dagger"
+        this.amountOfFlasks = 5
     }
 
     hp() {
-        return this.hp
+        return this.currentHp
+    }
+    
+    armor() {
+        return this.currentArmor
     }
 
     weapon() {
-        return this.weapon
+        return this.currentWeapon
     }
-
-    armor() {
-        return this.armor
-    }
-
+    
     flasks() {
-        return this.flasks
+        return this.amountOfFlasks
     }
 
     takeDamage(amount) {
-        this._hp -= amount
-        
-        if (this._hp <= this._maxhp) {
+        this.currentHp -= amount
+
+        if (this.currentHp <= this.maxHp) {
             this.death()
         }
     }
