@@ -7,19 +7,19 @@ export default class Player {
         this.amountOfFlasks = 5
     }
 
-    hp() {
+    getCurrentHp() {
         return this.currentHp
     }
     
-    armor() {
+    getCurrentArmor() {
         return this.currentArmor
     }
 
-    weapon() {
+    getCurrentWeapon() {
         return this.currentWeapon
     }
     
-    flasks() {
+    getAmountOfFlasks() {
         return this.amountOfFlasks
     }
 
@@ -27,11 +27,11 @@ export default class Player {
         this.currentHp -= amount
 
         if (this.currentHp <= this.maxHp) {
-            this.death()
+            this.playerDeath()
         }
     }
 
-    death() {
+    playerDeath() {
         console.log("Ouch... It seems i overestimated my abilities. Well, goodbye cruel world!")
     }
 }

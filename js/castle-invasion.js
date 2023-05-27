@@ -1,23 +1,48 @@
 import Player from "./player.js"
 
 const player = new Player()
-console.log(player._hp)
-console.log(player._armor)
-console.log(player._weapon)
-console.log(player._flasks)
+console.log(player.currentHp)
+console.log(player.currentArmor)
+console.log(player.currentWeapon)
+console.log(player.amountOfFlasks)
 
 class Game {
     constructor() {
-        this.isRunning = true
+        this.gameState = 1
     }
 
-    startGame() {
-        this.isRunning = true
+    evaluateGameState(event) {
+        event.preventDefault()
+        const action = playerAction.firstElementChild.value.toLowerCase()
+
+        switch (this.gameState) {
+            case 0:
+                this.endGame()
+                break
+            case 1:
+                this.outsideLevel(action)
+                break
+        }
     }
 
     endGame() {
-        this.isRunning = false
+        console.log("--End Game--")
+    }
+
+    outsideLevel(action) {
+        if (action == "enter") {
+            console.log("Into the storm!")
+            this.gameState = 2
+        } else if (action == "exit") {
+            console.log("Screw the gold, I'm saving my skin!")
+            this.gameState = 0
+        } else {
+            console.log("wut")
+        }
     }
 }
 
 const game = new Game()
+const playerAction = document.querySelector("form")
+
+playerAction.addEventListener("submit", e => { game.evaluateGameState(e) })
