@@ -1,7 +1,7 @@
 import Player from "./player.js"
 
 const player = new Player()
-console.log(player.hp)
-console.log(player.armor)
-console.log(player.weapon)
-console.log(player.flasks)
+console.log(player._hp)
+console.log(player._armor)
+console.log(player._weapon)
+console.log(player._flasks)

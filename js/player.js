@@ -1,9 +1,10 @@
 export default class Player {
     constructor() {
-        this.hp = 50
-        this.armor = "Chain Vest"
-        this.weapon = "Dagger"
-        this.flasks = 5
+        this._hp = 50
+        this._maxhp = this._hp
+        this._armor = "Chain Vest"
+        this._weapon = "Dagger"
+        this._flasks = 5
     }
 
     hp() {
@@ -20,5 +21,17 @@ export default class Player {
 
     flasks() {
         return this.flasks
+    }
+
+    takeDamage(amount) {
+        this._hp -= amount
+        
+        if (this._hp <= this._maxhp) {
+            this.death()
+        }
+    }
+
+    death() {
+        console.log("Ouch... It seems i overestimated my abilities. Well, goodbye cruel world!")
     }
 }
