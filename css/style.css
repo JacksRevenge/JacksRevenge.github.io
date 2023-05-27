@@ -15,6 +15,10 @@ body {
     border: 2px whitesmoke solid;
 }
 
+#playerStatus {
+    display: none;
+}
+
 form {
     align-content: center;
 }
