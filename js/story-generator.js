@@ -1,11 +1,19 @@
 export default class Story {
     constructor(seed) {
         this.seed = seed
-        this.castleSeed = Number(String(seed)[0])
+        this.sizeSeed = Number(String(seed)[0])
         this.stateSeed = Number(String(seed)[1])
+        this.castleSeed = Number(String(seed)[2])
         console.log("seed " + this.seed)
+
+        this.size = {
+            0: "a colossal",
+            1: "a massive",
+            2: "an average",
+            3: "a small",
+            4: "a tiny"}
         
-        this.castleState = {
+        this.state = {
             0: "smoldering",
             1: "overgrown",
             2: "well-kept",
@@ -13,17 +21,18 @@ export default class Story {
             4: "ruinous"}
         
         this.castleType = {
-            0: `a massive, ${this.castleState[this.stateSeed % 5]}, citadel`,
-            1: `a massive, ${this.castleState[this.stateSeed % 5]}, fort`,
-            2: `an average, ${this.castleState[this.stateSeed % 5]}, castle`,
-            3: `a small, ${this.castleState[this.stateSeed % 5]}, keep`,
-            4: `a tiny, ${this.castleState[this.stateSeed % 5]}, holdout`}
+            0: "citadel",
+            1: "fort",
+            2: "castle",
+            3: "keep",
+            4: "holdout"}
 
     }
 
     generateIntermissionScene() {
-        flavorText.innerHTML = `You stand before ${this.castleType[this.castleSeed % 5]}; the gate still intact.<br/> You look at the quest pamphlet...<br/>"Yep, this is the place."`
-        playerLocation.innerHTML = `LOCATION: ${this.castleType[this.castleSeed % 5]}`
+        const generatedCastle = `${this.size[this.sizeSeed % 5]}, ${this.state[this.stateSeed % 5]}, ${this.castleType[this.castleSeed % 5]}`
+        flavorText.innerHTML = `You stand before ${generatedCastle}; the gate still intact.<br/> You look at the quest pamphlet...<br/>"Yep, this is the place."`
+        playerLocation.innerHTML = `LOCATION: ${generatedCastle}`
         helpText.innerHTML = `TIP: Type 'enter' or 'exit' to either begin your quest, or abandon it`
     }
 

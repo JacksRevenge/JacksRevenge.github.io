@@ -4,7 +4,7 @@ import Story from "./story-generator.js"
 class Game {
     constructor() {
         this.gameState = 1
-        this.story = new Story(Math.floor(Math.random() * (99 - 10) + 10))
+        this.story = new Story(Math.floor(Math.random() * (999999 - 100000) + 100000))
         this.story.generateIntermissionScene()
         this.player = new Player()
     }
