@@ -26,7 +26,6 @@ export default class Story {
             2: "castle",
             3: "keep",
             4: "holdout"}
-
     }
 
     generateIntermissionScene() {
