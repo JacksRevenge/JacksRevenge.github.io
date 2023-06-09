@@ -35,7 +35,7 @@ export default class Story {
             3: "unusual",
             4: "crumbled"}
         
-        this.roomFlavour = {
+        this.roomFlavor = {
             0: "Embers radiate a faint light along the walls",
             1: "A creeping darkness covers the corners",
             2: "Some beautiful chandeliers light your path",
@@ -52,7 +52,7 @@ export default class Story {
 
     generateEntranceScene() {
         const generatedRoom = `${this.size[this.sizeSeed]} ${this.roomType[this.roomSeed[0]]} room`
-        flavorText.innerHTML = `Into the storm!<br/>You make your way inside the keep.<br/>${this.roomFlavour[this.stateSeed]} as you find yourself in  ${generatedRoom}`,
+        flavorText.innerHTML = `Into the storm!<br/>You make your way inside the keep.<br/>${this.roomFlavor[this.stateSeed]} as you find yourself in  ${generatedRoom}`,
         playerLocation.innerHTML = `LOCATION: ${generatedRoom}`,
         helpText.innerHTML = "TIP: Good luck!"
     }
