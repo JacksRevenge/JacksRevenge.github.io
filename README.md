@@ -1,6 +1,6 @@
-# ntijoh-jack-blomquist.github.io
+# jacksrevenge.github.io
 
 This is just a test for github pages.
 Right now you can play rock paper scissors
 
-https://ntijoh-jack-blomquist.github.io/ <-- here link
+https://jacksrevenge.github.io/ <-- here link
