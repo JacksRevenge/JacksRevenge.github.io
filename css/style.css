@@ -22,3 +22,11 @@ body {
 form {
     align-content: center;
 }
+
+p {
+    font-size: 24px;
+}
+
+input {
+    height: 24px;
+}
