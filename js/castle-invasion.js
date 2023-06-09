@@ -16,6 +16,7 @@ class Game {
     evaluateGameState(event) {
         event.preventDefault()
         const action = playerAction.firstElementChild.value.toLowerCase()
+        console.log(action)
 
         switch (this.gameState) {
             case 0:
@@ -27,6 +28,9 @@ class Game {
             case 2:
                 this.insideLevel(action)
                 break
+            case 3:
+                this.battleLevel(action)
+                break
         }
     }
 
@@ -35,6 +39,18 @@ class Game {
     }
 
     outsideLevel(action) {
+        if (action == "enter") {
+            this.story.generateEntranceScene(0)
+            this.gameState = 2
+        } else if (action == "exit") {
+            this.story.generateExitScene()
+            this.gameState = 0
+        } else {
+            console.log("wut")
+        }
+    }
+
+    insideLevel(action) {
         if (action == "enter") {
             this.story.generateEntranceScene()
             this.gameState = 2
@@ -46,8 +62,8 @@ class Game {
         }
     }
 
-    insideLevel(action) {
-        console.log(action)
+    battleLevel(action) {
+        console.log("WAR!! " + action)
     }
 }
 
